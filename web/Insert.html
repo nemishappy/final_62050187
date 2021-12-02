@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Insert Data</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script type="text/javascript">
+            function checkVaccine(val) {
+                var element = document.getElementById('vaccine');
+                if (val == 'others')
+                    element.style.display = 'block';
+                else
+                    element.style.display = 'none';
+            }
+
+        </script> 
+    </head>
+    <body>
+        <h2>Insert Data</h2>
+        <form name="insertForm" action="Insert" method="POST">
+            ID:
+            <input type="text" name="id" value="" /> <br/>
+            Vaccien: 
+            <select name="vaccineList" onchange='checkVaccine(this.value);'>
+                <option>pick a vaccine</option>  
+                <option value="SV">SV</option>
+                <option value="SP">SP</option>
+                <option value="AZ">AZ</option>
+                <option value="PZ">PZ</option>
+                <option value="MD">MD</option>
+                <option value="others">Others</option>
+            </select>
+            <input type="text" name="vaccine" id="vaccine" style='display:none;'/> <br/>
+            <input type="submit" value="submit" name="submitBtn" />
+        </form>
+    </body>
+</html>
